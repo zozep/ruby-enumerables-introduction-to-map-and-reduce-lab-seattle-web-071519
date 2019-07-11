@@ -24,6 +24,7 @@ def map_to_double(source_array)
     newArray[i] = newVal
     i+=1
   end
+  
   return newArray
 end
 
