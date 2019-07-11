@@ -40,36 +40,31 @@ def map_to_square(source_array)
   newArray
 end
 
-def reduce_to_total(source_array)
-  sum = 0
-  
-  source_array.each do |i|
-    sum += 1
-  end
-  
-  sum
-end
-
 def reduce_to_total(source_array, starting_point = 0)
-    source_array.reduce(starting_point) { |sum, num| sum + num}
+  new = starting_point
+  i = 0
+  
+  while i < source_array.length do
+    new += source_array[i]
+    i += 1
+  end
+  return new
 end
 
 def reduce_to_all_true(source_array)
   i = 0
-  new = []
-  
-  while i < source_array.length do
-    if source_array[i] != true
-      source_array[i] = true
-      new.push(source_array[i])
-      i+=1
-    else
-      if source_array[i].any? == true
-        new.push(source_array[i])
-        i+=1
-    end
+  while i < source_array.length do 
+    return false if !source_array[i]
+    i+=1
   end
-    return new
-  end
+  return true
 end
 
+def reduce_to_any_true(source_array)
+  i = 0
+  while i < source_array.length do
+     return true if source_array[i]
+     i+=1
+   end
+   return false
+end
