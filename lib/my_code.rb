@@ -8,7 +8,7 @@ def map_to_negativize(source_array)
     newArray[i] = newVal
     i+=1
   end
-  newArray
+  return newArray
 end
 
 def map_to_no_change(source_array)
